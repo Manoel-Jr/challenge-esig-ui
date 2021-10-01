@@ -1,0 +1,21 @@
+<h2>Detalhes da Tarefa</h2>
+
+<hr/>
+<div *ngIf="tarefa.id">
+  <div>
+    <label><b>ID: </b></label> {{tarefa.id}}
+  </div>
+  <div>
+    <label><b>Titulo: </b></label> {{tarefa.titulo}}
+  </div>
+  <div>
+    <label><b>Responsável: </b></label> {{tarefa.responsavel}}
+  </div>
+  <div>
+    <label><b>Situação: </b></label> {{tarefa.situacao}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar para listagem</button><br>

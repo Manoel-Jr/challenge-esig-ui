@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Listagem de Tarefas</h2>
+  </div>
+
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Titulo</th>
+          <th>Responsável</th>
+          <th>Situação</th>
+          <th>Açoes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarefa of tarefas | async">
+          <td>{{tarefa.id}}</td>
+          <td>{{tarefa.titulo}}</td>
+          <td>{{tarefa.responsavel}}</td>
+          <td>{{tarefa.situacao}}</td>
+          <td><button (click)="delete(tarefa.id)" class="btn btn-danger">Remover</button>
+              <button (click)="updateTarefa(tarefa.id)" class="btn btn-info" style="margin-left: 10px">Editar</button>
+              <button (click)="tarefaDetails(tarefa.id)" class="btn btn-success" style="margin-left: 10px">Detalhes</button>
+              <button *ngIf="tarefa.situacao === 'EM_ANDAMENTO'" (click)="conclude(tarefa.id)" class="btn btn-secondary" style="margin-left: 10px">Concluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
