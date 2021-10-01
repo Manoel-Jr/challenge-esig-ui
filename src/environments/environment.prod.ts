@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://challenge-esig.herokuapp.com/api/v1'
 };
